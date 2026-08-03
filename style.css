@@ -228,3 +228,23 @@ input{
     }
 
 }
+/* ==========================
+   DOOR HANDLE
+========================== */
+
+.door{
+    position:relative;
+    overflow:hidden;
+}
+
+.knob{
+    position:absolute;
+    right:18px;
+    top:50%;
+    transform:translateY(-50%);
+    width:14px;
+    height:14px;
+    border-radius:50%;
+    background:#ffd86b;
+    box-shadow:0 0 12px rgba(255,216,107,.8);
+}
