@@ -153,3 +153,10 @@ I'm sorry. 💙`;
     typing();
 
 }
+endBtn.onclick = ()=>{
+
+    document.body.style.transition="1.5s";
+
+    document.body.style.opacity="0";
+
+}
