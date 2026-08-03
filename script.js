@@ -18,7 +18,7 @@ const message = document.getElementById("message");
 const finalText = document.getElementById("finalText");
 const door = document.querySelector(".door");
 
-const SECRET = "NOYON";
+const SECRET = "16";
 let wrongCount = 0;
 
 // ================= WELCOME =================
@@ -109,7 +109,7 @@ openDoorBtn.onclick=()=>{
 
 function typeMessage(){
 
-    const text=`Hi Mitu...
+    const text=`Hi Jerin...
 
 I have been waiting for you.
 
