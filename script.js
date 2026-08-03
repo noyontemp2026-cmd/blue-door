@@ -101,7 +101,21 @@ function checkSecret(){
     }
 
 }
+const door = document.querySelector(".door");
+
 openDoorBtn.onclick = () => {
+
+    door.classList.add("opening");
+
+    setTimeout(()=>{
+
+        alert("🚪 The Blue Door is opening...\n\nScene 4 Coming Soon 💙");
+
+        door.classList.remove("opening");
+
+    },900);
+
+}
 
     alert("🚧 Scene 4 is under construction.\n\nComing Soon... 💙");
 
