@@ -1,97 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blue Door</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Door</title>
 
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+
 <div class="stars"></div>
-    <!-- Scene 1 -->
-    <section id="welcome">
 
-        <div class="content">
+<!-- ================= WELCOME ================= -->
 
-            <h1>This website is intended for only one person.</h1>
+<section id="welcome">
 
-            <p>
-                If you're not that person,<br>
-                please don't continue.
-            </p>
+    <div class="content">
 
-            <div class="buttons">
+        <h1>This website is intended for only one person.</h1>
 
-                <button id="mituBtn">
-                    ❤️ I'm Mitu
-                </button>
+        <p>
+            If you're not that person,<br>
+            please don't continue.
+        </p>
 
-                <button id="otherBtn">
-                    👤 Others
-                </button>
+        <div class="buttons">
 
-            </div>
+            <button id="mituBtn">❤️ I'm Mitu</button>
+
+            <button id="otherBtn">👤 Others</button>
 
         </div>
 
-    </section>
+    </div>
 
+</section>
 
+<!-- ================= OTHERS ================= -->
 
-    <!-- Others Screen -->
+<section id="othersScreen" class="hidden">
 
-    <section id="othersScreen" class="hidden">
+    <div class="content">
 
-        <div class="content">
+        <h1>Sorry!</h1>
 
-            <h1>I'm sorry.</h1>
+        <p>This website isn't for you.</p>
 
-            <p>
-                This website isn't for you.
-            </p>
+        <button id="leaveBtn">Go Back</button>
 
-            <button id="leaveBtn">
-                Leave
-            </button>
+    </div>
 
-        </div>
+</section>
 
-    </section>
+<!-- ================= VERIFY ================= -->
 
+<section id="verifyScreen" class="hidden">
 
+    <div class="box">
 
+        <h2>Verification Required</h2>
 
-    <!-- Scene 2 -->
+        <p>Enter the secret word.</p>
 
-    <section id="verifyScreen" class="hidden">
+        <input
+            id="secretInput"
+            type="text"
+            placeholder="Secret Word"
+        >
 
-        <div class="box">
+        <button id="continueBtn">
+            Continue →
+        </button>
 
-            <h2>Verification Required</h2>
+        <small id="message"></small>
 
-            <p>
-                Before entering...<br><br>
-                Please prove you're really Mitu.
-            </p>
+    </div>
 
-            <input
-                type="text"
-                id="secretInput"
-                placeholder="Enter the secret word..."
-            >
+</section>
 
-            <button id="continueBtn">
-                Continue →
-            </button>
-
-            <small id="message"></small>
-
-        </div>
-
-    </section>
-<!-- Scene 3 -->
+<!-- ================= DOOR ================= -->
 
 <section id="doorScene" class="hidden">
 
@@ -101,13 +88,13 @@
 
         <h2>Mitu 💙</h2>
 
-       <div class="door">
-    <div class="knob"></div>
-</div>
+        <div class="door">
 
-        <p>
-            Every door doesn't open for everyone.
-        </p>
+            <div class="knob"></div>
+
+        </div>
+
+        <p>Every door doesn't open for everyone.</p>
 
         <button id="openDoorBtn">
             🚪 Open The Door
@@ -116,19 +103,23 @@
     </div>
 
 </section>
-<!-- Final Message -->
+
+<!-- ================= FINAL ================= -->
 
 <section id="messageScene" class="hidden">
 
     <div class="content">
 
         <h1 id="finalText"></h1>
-<button id="endBtn" class="hidden">
-    ❤️ The End
-</button>
+
+        <button id="endBtn" class="hidden">
+            ❤️ The End
+        </button>
+
     </div>
 
 </section>
+
 <script src="script.js"></script>
 
 </body>
