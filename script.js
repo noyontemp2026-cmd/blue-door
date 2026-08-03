@@ -18,7 +18,7 @@ const message = document.getElementById("message");
 const finalText = document.getElementById("finalText");
 const door = document.querySelector(".door");
 
-const SECRET = "16";
+const SECRET = "MADARI";
 let wrongCount = 0;
 
 // ================= WELCOME =================
@@ -109,14 +109,9 @@ openDoorBtn.onclick=()=>{
 
 function typeMessage(){
 
-    const text=`Hi Jerin...
-
-I have been waiting for you.
-
-Thank you for opening this door.
-
-I made this only for you.
-
+    const text=`Hi Mitu medam.apnk wait koranor jnno sorry
+ami apnk onk jalai ai jnno sorry.bt apnk onk love kori
+onk onk besi valo basi apnk
 I love you. 💙`;
 
     finalText.innerHTML="";
