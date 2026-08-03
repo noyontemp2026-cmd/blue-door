@@ -1,86 +1,85 @@
-const doorScene = document.getElementById("doorScene");
-const messageScene = document.getElementById("messageScene");
-const finalText = document.getElementById("finalText");
+// =========================
+// ELEMENTS
+// =========================
+
+const welcome = document.getElementById("welcome");
+const verify = document.getElementById("verify");
+const others = document.getElementById("others");
+
 const mituBtn = document.getElementById("mituBtn");
 const otherBtn = document.getElementById("otherBtn");
+
 const continueBtn = document.getElementById("continueBtn");
 const leaveBtn = document.getElementById("leaveBtn");
-https://github.com/noyontemp2026-cmd/blue-door/blob/main/script.js
+
 const input = document.getElementById("secretInput");
 const message = document.getElementById("message");
 
-const SECRET = "NOYON";
+const doorScene = document.getElementById("doorScene");
+const openDoorBtn = document.getElementById("openDoorBtn");
+const door = document.querySelector(".door");
 
+const messageScene = document.getElementById("messageScene");
+const finalText = document.getElementById("finalText");
+const endBtn = document.getElementById("endBtn");
+
+// =========================
+
+const SECRET = "NOYON";
 let wrongCount = 0;
 
+// =========================
+// BUTTONS
+// =========================
 
-// I'm Mitu
 mituBtn.onclick = () => {
     welcome.classList.add("hidden");
     verify.classList.remove("hidden");
-}
+};
 
-
-// Others
 otherBtn.onclick = () => {
     welcome.classList.add("hidden");
     others.classList.remove("hidden");
-}
+};
 
-
-// Leave
 leaveBtn.onclick = () => {
     location.reload();
-}
+};
 
-
-// Continue
 continueBtn.onclick = checkSecret;
 
-
-// Enter key
 input.addEventListener("keypress", function(e){
-    if(e.key==="Enter"){
+    if(e.key === "Enter"){
         checkSecret();
     }
 });
 
+// =========================
+// SECRET WORD
+// =========================
 
 function checkSecret(){
 
     const value = input.value.trim().toUpperCase();
 
-   if(value===SECRET){
+    if(value === SECRET){
 
-    message.style.color="#55ff88";
-    message.innerHTML="✅ Access Granted...";
+        message.style.color="#55ff88";
+        message.innerHTML="✅ Access Granted...";
 
-    setTimeout(()=>{
+        setTimeout(()=>{
 
-        verify.classList.add("hidden");
-        doorScene.classList.remove("hidden");
+            verify.classList.add("hidden");
+            doorScene.classList.remove("hidden");
 
-    },1200);
+        },1200);
 
-}
-
-    else{
+    }else{
 
         wrongCount++;
 
         message.style.color="#ff5d5d";
         message.innerHTML="❌ Wrong Secret Word";
-
-        input.style.transform="translateX(10px)";
-
-        setTimeout(()=>{
-            input.style.transform="translateX(-10px)";
-        },80);
-
-        setTimeout(()=>{
-            input.style.transform="translateX(0)";
-        },160);
-
 
         if(wrongCount>=3){
 
@@ -95,36 +94,42 @@ function checkSecret(){
                 message.innerHTML="";
                 wrongCount=0;
 
-            },2500);
+            },2000);
 
         }
 
     }
 
 }
-const door = document.querySelector(".door");
 
-openDoorBtn.onclick = () => {
+// =========================
+// DOOR
+// =========================
 
- door.classList.add("opening");
+openDoorBtn.onclick = ()=>{
 
-setTimeout(()=>{
+    door.classList.add("opening");
 
-    doorScene.classList.add("hidden");
-    messageScene.classList.remove("hidden");
+    setTimeout(()=>{
 
-    typeMessage();
+        doorScene.classList.add("hidden");
+        messageScene.classList.remove("hidden");
 
-},900);
+        typeMessage();
 
-}
+    },900);
 
-    alert("🚧 Scene 4 is under construction.\n\nComing Soon... 💙");
+};
 
-}
+// =========================
+// MESSAGE
+// =========================
+
 function typeMessage(){
 
-    const text = `Hi Mitu...
+    finalText.innerHTML="";
+
+    const text=`Hi Mitu...
 
 I have been waiting for you.
 
@@ -134,17 +139,21 @@ I made this only for you.
 
 I'm sorry. 💙`;
 
-    let i = 0;
+    let i=0;
 
     function typing(){
 
-        if(i < text.length){
+        if(i<text.length){
 
-            finalText.innerHTML += text.charAt(i);
+            finalText.innerHTML+=text.charAt(i);
 
             i++;
 
             setTimeout(typing,50);
+
+        }else{
+
+            endBtn.classList.remove("hidden");
 
         }
 
@@ -153,10 +162,14 @@ I'm sorry. 💙`;
     typing();
 
 }
-endBtn.onclick = ()=>{
+
+// =========================
+// END
+// =========================
+
+endBtn.onclick=()=>{
 
     document.body.style.transition="1.5s";
-
     document.body.style.opacity="0";
 
-}
+};
