@@ -117,7 +117,7 @@ Thank you for opening this door.
 
 I made this only for you.
 
-I'm sorry. 💙`;
+I love you. 💙`;
 
     finalText.innerHTML="";
 
