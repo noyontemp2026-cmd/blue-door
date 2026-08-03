@@ -1,100 +1,86 @@
-// =========================
-// ELEMENTS
-// =========================
+// ================= ELEMENTS =================
 
 const welcome = document.getElementById("welcome");
-const verify = document.getElementById("verify");
-const others = document.getElementById("others");
+const verifyScreen = document.getElementById("verifyScreen");
+const othersScreen = document.getElementById("othersScreen");
+const doorScene = document.getElementById("doorScene");
+const messageScene = document.getElementById("messageScene");
 
 const mituBtn = document.getElementById("mituBtn");
 const otherBtn = document.getElementById("otherBtn");
-
-const continueBtn = document.getElementById("continueBtn");
 const leaveBtn = document.getElementById("leaveBtn");
-
-const input = document.getElementById("secretInput");
-const message = document.getElementById("message");
-
-const doorScene = document.getElementById("doorScene");
+const continueBtn = document.getElementById("continueBtn");
 const openDoorBtn = document.getElementById("openDoorBtn");
-const door = document.querySelector(".door");
-
-const messageScene = document.getElementById("messageScene");
-const finalText = document.getElementById("finalText");
 const endBtn = document.getElementById("endBtn");
 
-// =========================
+const secretInput = document.getElementById("secretInput");
+const message = document.getElementById("message");
+const finalText = document.getElementById("finalText");
+const door = document.querySelector(".door");
 
 const SECRET = "NOYON";
 let wrongCount = 0;
 
-// =========================
-// BUTTONS
-// =========================
+// ================= WELCOME =================
 
 mituBtn.onclick = () => {
     welcome.classList.add("hidden");
-    verify.classList.remove("hidden");
+    verifyScreen.classList.remove("hidden");
 };
 
 otherBtn.onclick = () => {
     welcome.classList.add("hidden");
-    others.classList.remove("hidden");
+    othersScreen.classList.remove("hidden");
 };
 
 leaveBtn.onclick = () => {
-    location.reload();
+    othersScreen.classList.add("hidden");
+    welcome.classList.remove("hidden");
 };
+
+// ================= VERIFY =================
 
 continueBtn.onclick = checkSecret;
 
-input.addEventListener("keypress", function(e){
-    if(e.key === "Enter"){
+secretInput.addEventListener("keydown", (e)=>{
+    if(e.key==="Enter"){
         checkSecret();
     }
 });
 
-// =========================
-// SECRET WORD
-// =========================
-
 function checkSecret(){
 
-    const value = input.value.trim().toUpperCase();
+    if(secretInput.value.trim().toUpperCase()===SECRET){
 
-    if(value === SECRET){
-
-        message.style.color="#55ff88";
-        message.innerHTML="✅ Access Granted...";
+        message.style.color="#7CFF9A";
+        message.innerHTML="Access Granted...";
 
         setTimeout(()=>{
 
-            verify.classList.add("hidden");
+            verifyScreen.classList.add("hidden");
             doorScene.classList.remove("hidden");
 
-        },1200);
+        },800);
 
     }else{
 
         wrongCount++;
 
-        message.style.color="#ff5d5d";
-        message.innerHTML="❌ Wrong Secret Word";
+        message.style.color="#ff6b6b";
+        message.innerHTML="Wrong Secret Word";
 
         if(wrongCount>=3){
 
-            message.innerHTML="⛔ Access Denied";
-
             setTimeout(()=>{
 
-                verify.classList.add("hidden");
+                verifyScreen.classList.add("hidden");
                 welcome.classList.remove("hidden");
 
-                input.value="";
+                secretInput.value="";
                 message.innerHTML="";
                 wrongCount=0;
 
-            },2000);
+            },1000);
 
         }
 
@@ -102,11 +88,9 @@ function checkSecret(){
 
 }
 
-// =========================
-// DOOR
-// =========================
+// ================= DOOR =================
 
-openDoorBtn.onclick = ()=>{
+openDoorBtn.onclick=()=>{
 
     door.classList.add("opening");
 
@@ -117,17 +101,13 @@ openDoorBtn.onclick = ()=>{
 
         typeMessage();
 
-    },900);
+    },800);
 
 };
 
-// =========================
-// MESSAGE
-// =========================
+// ================= MESSAGE =================
 
 function typeMessage(){
-
-    finalText.innerHTML="";
 
     const text=`Hi Mitu...
 
@@ -139,6 +119,8 @@ I made this only for you.
 
 I'm sorry. 💙`;
 
+    finalText.innerHTML="";
+
     let i=0;
 
     function typing(){
@@ -149,7 +131,7 @@ I'm sorry. 💙`;
 
             i++;
 
-            setTimeout(typing,50);
+            setTimeout(typing,45);
 
         }else{
 
@@ -163,9 +145,7 @@ I'm sorry. 💙`;
 
 }
 
-// =========================
-// END
-// =========================
+// ================= END =================
 
 endBtn.onclick=()=>{
 
