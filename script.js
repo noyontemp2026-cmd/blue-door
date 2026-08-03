@@ -1,6 +1,4 @@
-const welcome = document.getElementById("welcome");
-const verify = document.getElementById("verifyScreen");
-const others = document.getElementById("othersScreen");
+const doorScene = document.getElementById("doorScene");
 
 const mituBtn = document.getElementById("mituBtn");
 const otherBtn = document.getElementById("otherBtn");
@@ -51,12 +49,19 @@ function checkSecret(){
 
     const value = input.value.trim().toUpperCase();
 
-    if(value===SECRET){
+   if(value===SECRET){
 
-        message.style.color="#55ff88";
-        message.innerHTML="✅ Access Granted...";
+    message.style.color="#55ff88";
+    message.innerHTML="✅ Access Granted...";
 
-    }
+    setTimeout(()=>{
+
+        verify.classList.add("hidden");
+        doorScene.classList.remove("hidden");
+
+    },1200);
+
+}
 
     else{
 
