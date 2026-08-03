@@ -170,3 +170,26 @@ input{
     }
 
 }
+.opening{
+
+    animation:openDoor .9s forwards;
+
+}
+
+@keyframes openDoor{
+
+    0%{
+        transform:scale(1);
+        opacity:1;
+    }
+
+    40%{
+        transform:scale(1.08);
+    }
+
+    100%{
+        transform:scale(1.35);
+        opacity:0;
+    }
+
+}
