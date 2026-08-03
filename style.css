@@ -6,9 +6,11 @@
 }
 
 body{
-    background:#050816;
+    background:
+    radial-gradient(circle at top,#163d72 0%,#08111f 35%,#03060c 100%);
     color:white;
     overflow:hidden;
+    min-height:100vh;
 }
 
 section{
