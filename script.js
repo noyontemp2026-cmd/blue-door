@@ -1,5 +1,6 @@
 const doorScene = document.getElementById("doorScene");
-
+const messageScene = document.getElementById("messageScene");
+const finalText = document.getElementById("finalText");
 const mituBtn = document.getElementById("mituBtn");
 const otherBtn = document.getElementById("otherBtn");
 const continueBtn = document.getElementById("continueBtn");
@@ -105,18 +106,50 @@ const door = document.querySelector(".door");
 
 openDoorBtn.onclick = () => {
 
-    door.classList.add("opening");
+ door.classList.add("opening");
 
-    setTimeout(()=>{
+setTimeout(()=>{
 
-        alert("🚪 The Blue Door is opening...\n\nScene 4 Coming Soon 💙");
+    doorScene.classList.add("hidden");
+    messageScene.classList.remove("hidden");
 
-        door.classList.remove("opening");
+    typeMessage();
 
-    },900);
+},900);
 
 }
 
     alert("🚧 Scene 4 is under construction.\n\nComing Soon... 💙");
+
+}
+function typeMessage(){
+
+    const text = `Hi Mitu...
+
+I have been waiting for you.
+
+Thank you for opening this door.
+
+I made this only for you.
+
+I'm sorry. 💙`;
+
+    let i = 0;
+
+    function typing(){
+
+        if(i < text.length){
+
+            finalText.innerHTML += text.charAt(i);
+
+            i++;
+
+            setTimeout(typing,50);
+
+        }
+
+    }
+
+    typing();
 
 }
