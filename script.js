@@ -4,7 +4,7 @@ const mituBtn = document.getElementById("mituBtn");
 const otherBtn = document.getElementById("otherBtn");
 const continueBtn = document.getElementById("continueBtn");
 const leaveBtn = document.getElementById("leaveBtn");
-
+https://github.com/noyontemp2026-cmd/blue-door/blob/main/script.js
 const input = document.getElementById("secretInput");
 const message = document.getElementById("message");
 
@@ -99,5 +99,10 @@ function checkSecret(){
         }
 
     }
+
+}
+openDoorBtn.onclick = () => {
+
+    alert("🚧 Scene 4 is under construction.\n\nComing Soon... 💙");
 
 }
