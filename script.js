@@ -18,7 +18,7 @@ const message = document.getElementById("message");
 const finalText = document.getElementById("finalText");
 const door = document.querySelector(".door");
 
-const SECRET = "noyon";
+const SECRET = "00";
 let wrongCount = 0;
 
 // ================= WELCOME =================
@@ -109,9 +109,7 @@ openDoorBtn.onclick=()=>{
 
 function typeMessage(){
 
-    const text=`Hi Mitu medam.apnk wait koranor jnno sorry
-ami apnk onk jalai ai jnno sorry.bt apnk onk love kori
-onk onk besi valo basi apnk
+    const text=hi masu medam.
 I love you. 💙`;
 
     finalText.innerHTML="";
