@@ -109,7 +109,7 @@ openDoorBtn.onclick=()=>{
 
 function typeMessage(){
 
-  const text = `Hi Masuma Madam. 💙
+  const text = `Hi Masuma . 💙
 
 I love you so much.
 Thank you for opening this secret door.
