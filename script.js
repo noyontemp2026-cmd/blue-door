@@ -109,8 +109,11 @@ openDoorBtn.onclick=()=>{
 
 function typeMessage(){
 
-    const text=hi masu medam.
-I love you. 💙`;
+  const text = `Hi Masu Madam. 💙
+
+I love you so much.
+Thank you for opening this secret door.
+You are very special to me. ❤️`;
 
     finalText.innerHTML="";
 
