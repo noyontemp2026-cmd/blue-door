@@ -18,7 +18,7 @@ const message = document.getElementById("message");
 const finalText = document.getElementById("finalText");
 const door = document.querySelector(".door");
 
-const SECRET = "MADARI";
+const SECRET = "noyon";
 let wrongCount = 0;
 
 // ================= WELCOME =================
