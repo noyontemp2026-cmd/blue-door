@@ -109,11 +109,11 @@ openDoorBtn.onclick=()=>{
 
 function typeMessage(){
 
-  const text = `Hi Masuma . 💙
+  const text = `Hi future gf . 💙
 
 I love you so much.
 Thank you for opening this secret door.
-You are very special to me.i ove u ❤️`;
+You are very special to me.i love u ❤️`;
 
     finalText.innerHTML="";
 
