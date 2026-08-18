@@ -113,7 +113,7 @@ function typeMessage(){
 
 I love you so much.
 Thank you for opening this secret door.
-You are very special to me. ❤️`;
+You are very special to me.i ove u ❤️`;
 
     finalText.innerHTML="";
 
